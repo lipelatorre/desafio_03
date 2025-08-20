@@ -1,9 +1,12 @@
-# desafio_03
+# Desafio_03
 Desafio 03 - SRE - Grafana e Prometheus
 
 ## Pré-Requisitos
 
-Minikube instalado
+- [Minikube](https://minikube.sigs.k8s.io/docs/start/)  
+- [kubectl](https://kubernetes.io/docs/tasks/tools/)  
+- [Helm](https://helm.sh/docs/intro/install/)  
+- Docker (dependência para rodar o Minikube)  
 
 ## 01 - Execução do projeto
 
@@ -26,9 +29,9 @@ Para verificar se o Prometheus está no ar, acesse http://localhost:9090
 
 ## 05 - Testando o Grafana
 
-Para verificar se o Prometheus está no ar, acesse http://localhost:3000
+Para verificar se o Grafana está no ar, acesse http://localhost:3000
 
-Para acessar o Grafana, utilize o usuário admin, e a senha gerada pelo script
+Para acessar o Grafana, utilize o usuário admin, e a senha gerada pelo script. Ou podemos obter a senha com o comando: kubectl get secret --namespace desafio monitoring-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 
 Em Dashboards -> Import -> 6417. Isso trará um template do monitoramento do Kubernetes.
 
